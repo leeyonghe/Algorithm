@@ -1,0 +1,139 @@
+<html>
+<head>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+<script>
+
+class DigitalNumeric {
+
+    constructor(size, numbers) {
+        this.size = size;
+        this.numbers = numbers;
+        this.default_gap = 70;
+    }
+
+    draw(){
+        this.ctx.font = "30px Arial";
+        var position = 0
+        for(var i of this.numbers) {
+            var array = this.getNumber(parseInt(i))
+            this.paintText(this.default_gap*position, array)
+            position += 1
+        }
+    }
+
+    paintText(gap, array){
+        this.ctx.fillText("---", 35+gap, 50);
+        this.ctx.fillText("|", 20+gap, 80);
+        this.ctx.fillText("|", 70+gap, 80);
+        this.ctx.fillText("---", 35+gap, 100);
+        this.ctx.fillText("|", 20+gap, 130);
+        this.ctx.fillText("|", 70+gap, 130);
+        this.ctx.fillText("---", 35+gap, 150);
+    }
+
+    setupCanvas(canvas) {
+        var dpr = window.devicePixelRatio || 1;
+        var rect = canvas.getBoundingClientRect();
+        canvas.width = rect.width * dpr;
+        canvas.height = rect.height * dpr;
+        this.ctx = canvas.getContext('2d');
+        this.ctx.scale(dpr, dpr);
+        this.canvas = canvas
+    }
+
+    getNumber(number){
+        switch(number){
+            case 0:{
+                var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
+                array[0][0] = 2; array[0][1] = 1; array[0][2] = 2;
+                array[1][0] = 1; array[1][1] = 2; array[1][2] = 1;
+                array[2][0] = 2; array[2][1] = 0; array[3][2] = 2;
+                array[3][0] = 1; array[3][1] = 2; array[4][2] = 1;
+                array[4][0] = 2; array[4][1] = 1; array[5][2] = 2;
+            }return array;
+            case 1:{
+                var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
+                array[0][0] = 2; array[0][1] = 0; array[0][2] = 2;
+                array[1][0] = 0; array[1][1] = 1; array[1][2] = 0;
+                array[2][0] = 2; array[2][1] = 0; array[2][2] = 2;
+                array[3][0] = 0; array[3][1] = 1; array[3][2] = 0;
+                array[4][0] = 2; array[4][1] = 0; array[4][2] = 2;
+            }return array;
+            case 2:{
+                var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
+                array[0][0] = 2; array[0][1] = 1; array[0][2] = 2;
+                array[1][0] = 0; array[1][1] = 2; array[1][2] = 1;
+                array[2][0] = 2; array[2][1] = 1; array[2][2] = 2;
+                array[3][0] = 1; array[3][1] = 2; array[3][2] = 0;
+                array[4][0] = 2; array[4][1] = 1; array[4][2] = 2;
+            }return array;
+            case 3:{
+                var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
+                array[0][0] = 2; array[0][1] = 1; array[0][2] = 2;
+                array[1][0] = 0; array[1][1] = 2; array[1][2] = 1;
+                array[2][0] = 2; array[2][1] = 1; array[2][2] = 2;
+                array[3][0] = 0; array[3][1] = 2; array[3][2] = 1;
+                array[4][0] = 2; array[4][1] = 1; array[4][2] = 2;
+            }return array;
+            case 4:{
+                var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
+                array[0][0] = 2; array[0][1] = 0; array[0][2] = 2;
+                array[1][0] = 1; array[1][1] = 2; array[1][2] = 1;
+                array[2][0] = 2; array[2][1] = 1; array[2][2] = 2;
+                array[3][0] = 1; array[3][1] = 2; array[3][2] = 1;
+                array[4][0] = 2; array[4][1] = 0; array[4][2] = 2;
+            }return array;
+            case 5:{
+                var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
+                array[0][0] = 2; array[0][1] = 1; array[0][2] = 2;
+                array[1][0] = 1; array[1][1] = 2; array[1][2] = 0;
+                array[2][0] = 2; array[2][1] = 1; array[2][2] = 2;
+                array[3][0] = 0; array[3][1] = 2; array[3][2] = 1;
+                array[4][0] = 2; array[4][1] = 1; array[4][2] = 2;
+            }return array;
+            case 6:{
+                var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
+                array[0][0] = 2; array[0][1] = 0; array[0][2] = 2;
+                array[1][0] = 1; array[1][1] = 2; array[1][2] = 0;
+                array[2][0] = 2; array[2][1] = 1; array[2][2] = 2;
+                array[3][0] = 1; array[3][1] = 2; array[3][2] = 1;
+                array[4][0] = 2; array[4][1] = 1; array[4][2] = 2;
+            }return array;
+            case 7:{
+                var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
+                array[0][0] = 2; array[0][1] = 1; array[0][2] = 2;
+                array[1][0] = 0; array[1][1] = 2; array[1][2] = 1;
+                array[2][0] = 2; array[2][1] = 0; array[2][2] = 2;
+                array[3][0] = 0; array[3][1] = 2; array[3][2] = 1;
+                array[4][0] = 2; array[4][1] = 0; array[4][2] = 2;
+            }return array;
+            case 8:{
+                var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
+                array[0][0] = 2; array[0][1] = 1; array[0][2] = 2;
+                array[1][0] = 1; array[1][1] = 2; array[1][2] = 1;
+                array[2][0] = 2; array[2][1] = 1; array[2][2] = 2;
+                array[3][0] = 1; array[3][1] = 2; array[3][2] = 1;
+                array[4][0] = 2; array[4][1] = 1; array[4][2] = 2;
+            }return array;
+            case 9:{
+                var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
+                array[0][0] = 2; array[0][1] = 1; array[0][2] = 2;
+                array[1][0] = 1; array[1][1] = 2; array[1][2] = 1;
+                array[2][0] = 2; array[2][1] = 1; array[2][2] = 2;
+                array[3][0] = 0; array[3][1] = 2; array[3][2] = 1;
+                array[4][0] = 2; array[4][1] = 0; array[4][2] = 2;
+            }return array;
+        }
+    }
+
+}
+
+const dn = new DigitalNumeric(3, "1234".split(''));
+dn.setupCanvas(document.getElementById("canvas"))
+dn.draw()
+
+</script>
+</body>
+</html>
