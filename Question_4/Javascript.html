@@ -24,13 +24,31 @@ class DigitalNumeric {
     }
 
     paintText(gap, array){
-        this.ctx.fillText("---", 35+gap, 50);
-        this.ctx.fillText("|", 20+gap, 80);
-        this.ctx.fillText("|", 70+gap, 80);
-        this.ctx.fillText("---", 35+gap, 100);
-        this.ctx.fillText("|", 20+gap, 130);
-        this.ctx.fillText("|", 70+gap, 130);
-        this.ctx.fillText("---", 35+gap, 150);
+        for (var i = 0 ; i < 5 ; i++){
+            for (var j = 0 ; j < 3 ; j++){
+                if(array[i][j] == 1){
+                    this.returnLabel(i,j,gap)
+                }
+            }
+        }
+    }
+
+    returnLabel(x, y, gap){
+        if (x == 0 && y == 1){
+            return this.ctx.fillText("---", 35+gap, 50);
+        }else if (x == 1 && y == 0){
+            return this.ctx.fillText("|", 20+gap, 80);
+        }else if (x == 1 && y == 2){
+            return this.ctx.fillText("|", 70+gap, 80);
+        }else if (x == 2 && y == 1){
+            return this.ctx.fillText("---", 35+gap, 100);
+        }else if (x == 3 && y == 0){
+            return this.ctx.fillText("|", 20+gap, 130);
+        }else if (x == 3 && y == 2){
+            return this.ctx.fillText("|", 70+gap, 130);
+        }else if (x == 4 && y == 1){
+            return this.ctx.fillText("---", 35+gap, 150);
+        }
     }
 
     setupCanvas(canvas) {
@@ -49,16 +67,16 @@ class DigitalNumeric {
                 var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
                 array[0][0] = 2; array[0][1] = 1; array[0][2] = 2;
                 array[1][0] = 1; array[1][1] = 2; array[1][2] = 1;
-                array[2][0] = 2; array[2][1] = 0; array[3][2] = 2;
-                array[3][0] = 1; array[3][1] = 2; array[4][2] = 1;
-                array[4][0] = 2; array[4][1] = 1; array[5][2] = 2;
+                array[2][0] = 2; array[2][1] = 0; array[2][2] = 2;
+                array[3][0] = 1; array[3][1] = 2; array[3][2] = 1;
+                array[4][0] = 2; array[4][1] = 1; array[4][2] = 2;
             }return array;
             case 1:{
                 var array = new Array( new Array(3), new Array(3), new Array(3), new Array(3), new Array(3));
                 array[0][0] = 2; array[0][1] = 0; array[0][2] = 2;
-                array[1][0] = 0; array[1][1] = 1; array[1][2] = 0;
+                array[1][0] = 0; array[1][1] = 2; array[1][2] = 1;
                 array[2][0] = 2; array[2][1] = 0; array[2][2] = 2;
-                array[3][0] = 0; array[3][1] = 1; array[3][2] = 0;
+                array[3][0] = 0; array[3][1] = 2; array[3][2] = 1;
                 array[4][0] = 2; array[4][1] = 0; array[4][2] = 2;
             }return array;
             case 2:{
@@ -82,7 +100,7 @@ class DigitalNumeric {
                 array[0][0] = 2; array[0][1] = 0; array[0][2] = 2;
                 array[1][0] = 1; array[1][1] = 2; array[1][2] = 1;
                 array[2][0] = 2; array[2][1] = 1; array[2][2] = 2;
-                array[3][0] = 1; array[3][1] = 2; array[3][2] = 1;
+                array[3][0] = 0; array[3][1] = 2; array[3][2] = 1;
                 array[4][0] = 2; array[4][1] = 0; array[4][2] = 2;
             }return array;
             case 5:{
@@ -130,7 +148,7 @@ class DigitalNumeric {
 
 }
 
-const dn = new DigitalNumeric(3, "1234".split(''));
+const dn = new DigitalNumeric(3, "0909".split(''));
 dn.setupCanvas(document.getElementById("canvas"))
 dn.draw()
 
