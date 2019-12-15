@@ -1,0 +1,24 @@
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+	while(true){
+		val sc: Scanner = Scanner(System.`in`)
+		var count = sc.nextInt()
+		var result = FloatArray(count, {0.0f})
+		var index = 0
+		while(count != 0 && sc.hasNext()){
+			val pay = sc.nextFloat()
+			result.set(index, pay)
+			count -= 1
+			index += 1
+		}
+		result.sorted()
+		var min_value = result[0]
+		var t_result : Float = 0.0f
+		for (i in 1..result.count()-1) {
+			t_result = t_result + (result[i] - min_value)
+		}
+		t_result = t_result / result.count()
+		println(""+result.count()+"명이 "+t_result+"만큼 나누어 내야 한다.")
+	}
+}
