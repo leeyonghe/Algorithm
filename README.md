@@ -126,12 +126,14 @@
    </tr>
    <tr>
          <td>
-            I 5 6
-            F 3 3 J
-            V 2 3 4 W
-            H 3 4 2 Z
-            S one.bmp
-            X
+           <pre>
+I 5 6
+F 3 3 J
+V 2 3 4 W
+H 3 4 2 Z
+S one.bmp
+X
+           </pre>
          </td>
          <td>
            <pre>
