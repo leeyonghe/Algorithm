@@ -126,19 +126,21 @@
    <tr>
          <td>
             I 5 6
-            L 2 3 A
+            F 3 3 J
+            V 2 3 4 W
+            H 3 4 2 Z
             S one.bmp
             X
          </td>
          <td>
            <pre>
 one.bmp
-00000
-00000
-0A000
-00000
-00000
-00000
+JJJJJ
+JJZZJ
+JWJJJ
+JWJJJ
+JJJJJ
+JJJJJ
            </pre>
          </td>
    </tr>      
