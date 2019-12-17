@@ -1,0 +1,47 @@
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    System.out.print(">>>>>>>>>>>>>>>>> Start");
+    Scanner sc = new Scanner(System.in); // OR replace System.in with file to read
+    int caseInt = sc.nextInt();
+    int[][] group = new int[caseInt][1000];
+    int[][] result = new int[caseInt][1];
+    int start_index = 0;
+    int now_index = 0;
+    boolean start = false;
+    while(caseInt != 0){
+
+        String line = sc.nextLine().trim();
+        if (line.isEmpty()) {
+            if (start == true && line.isEmpty()) {
+                start = false;
+            }else {
+                continue;						
+            }
+        }else if (!line.isEmpty()) {
+            start = true;
+        }
+        
+        System.out.println(">>>>>>>>>>>> line : "+line);
+//				int value = Integer.parseInt(line);
+//				System.out.println(">>>>>>>>>>>> value : "+value);
+        if (start == false) {
+            result[start_index][0] = now_index;
+            while (now_index < 1000) {
+                group[start_index][now_index++] = 0;	
+            }
+            start_index++;
+            caseInt -= 1;
+            now_index = 0;
+        }else {
+            int value = Integer.parseInt(line);
+            group[start_index][now_index++] = value;
+        }
+    }
+    
+    caseInt = result.length;
+    for (int i = 0; i < caseInt; i++) {
+        System.out.println("case "+i);
+        System.out.println("Count "+result[i][0]);
+    }
+    
+}
