@@ -166,7 +166,7 @@ JJJJJ
    <tr>
          <td>
             <pre>
-1
+1<br>
 
 299
 492
@@ -183,7 +183,7 @@ JJJJJ
          </td>
          <td>
            <pre>
-5
+7
            </pre>
          </td>
    </tr>      

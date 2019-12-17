@@ -22,8 +22,6 @@ public static void main(String[] args) {
         }
         
         System.out.println(">>>>>>>>>>>> line : "+line);
-//				int value = Integer.parseInt(line);
-//				System.out.println(">>>>>>>>>>>> value : "+value);
         if (start == false) {
             result[start_index][0] = now_index;
             while (now_index < 1000) {
