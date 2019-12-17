@@ -148,7 +148,6 @@ JJJJJ
          </td>
    </tr>      
 </table>
-<<<<<<< HEAD
 - 문제 6 <br>
    * 인터프리터 문제 <br>
    * 최초 case별(그룹별)로 몇개를 입력받는지 선택한다.
@@ -190,7 +189,3 @@ JJJJJ
 </table>
 - 문제 7 <br>
    * 체크확인 문제 <br>
-=======
-- 문제 6 [Java]<br>
-   * 인터프리터 문제 <br>
->>>>>>> 7c5d9dae89d5fbec5701a5ccc4b5eac9dfd734da
