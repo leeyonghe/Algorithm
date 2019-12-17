@@ -4,6 +4,15 @@
 <img src="./ScreenShot/algorithm0.png" width="150px">
 <img src="./ScreenShot/algorithm1.png" width="150px">
 <img src="./ScreenShot/algorithm2.jpg" width="150px">
+</div>
+- 사용한언어 <br>
+<div>
+   <img src="./ScreenShot/java.png" width="150px">
+   <img src="./ScreenShot/swift.png" width="150px">
+   <img src="./ScreenShot/kotlin.png" width="150px">
+   <img src="./ScreenShot/javascript.png" width="150px">
+   <img src="./ScreenShot/python.png" width="150px">
+</div>
 - 문제 1 [Java]
    <img src="./ScreenShot/java.png" width="50px">
    * 3n + 1 문제
