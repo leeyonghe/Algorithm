@@ -207,7 +207,7 @@ JJJJJ
    * 입력시 체스판 전체의 위치를 넣는다. .는 빈공간이고 나머지는 아래와 같이 약어로 각 체스말을 표시한다. 각 말에 대한 상세한 설명은 제외한다. <br>
       * k : King <br>
       * q : Queen <br>
-      * n : Kngith <br>
+      * n : Knight <br>
       * b : Bishop <br>
       * r : Rook <br>
       * p : Pawn <br>
