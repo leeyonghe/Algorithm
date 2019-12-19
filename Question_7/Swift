@@ -21,6 +21,7 @@ enum PieceType{
 }
 
 protocol Action {
+    associatedtype T
     var chese : Chese? { get set }
     var piecetype : PieceType? { get set }
     var position : Position? { get set }
@@ -30,6 +31,7 @@ protocol Action {
     func Rook(pos : Position) -> Bool
     func Quene(pos : Position) -> Bool
     func King(pos : Position) -> Bool
+    func CheckIn(enemy : T) -> Bool
 }
 
 struct MyTeam : Action {
