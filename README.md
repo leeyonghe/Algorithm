@@ -204,14 +204,14 @@ JJJJJ
 - 문제 7 <br>
    <img src="./ScreenShot/swift.png" width="50px">
    * 체스 체크확인 문제 <br>
-   * 입력시 체스판 전체의 위치를 넣는다. .는 빈공간이고 나머지는 아래와 같이 약어로 각 체스말을 표시한다.
-      * k : king
-      * q : Quene
-      * n : Kngith
-      * b : Bishop
-      * r : Rook
-      * p : Pawn
-   * 소문자는 내 팀이고 대문자는 적을 표시한다.
+   * 입력시 체스판 전체의 위치를 넣는다. .는 빈공간이고 나머지는 아래와 같이 약어로 각 체스말을 표시한다. <br>
+      * k : king <br>
+      * q : Quene <br>
+      * n : Kngith <br>
+      * b : Bishop <br>
+      * r : Rook <br>
+      * p : Pawn <br>
+   * 소문자는 내 팀이고 대문자는 적을 표시한다. <br>
 <table>
    <tr>
          <td>
@@ -242,4 +242,5 @@ Check in
    </tr>      
 </table>
 - 문제 8 <br>
+   <img src="./ScreenShot/kotlin.png" width="50px">
    * 호주식 투표법 문제 <br>
