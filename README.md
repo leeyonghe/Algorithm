@@ -203,8 +203,6 @@ JJJJJ
 </table>
 - 문제 7 <br>
    * 체스 체크확인 문제 <br>
-
-
 <table>
    <tr>
          <td>
@@ -234,3 +232,5 @@ Check in
          </td>
    </tr>      
 </table>
+- 문제 8 <br>
+   * 호주식 투표법 문제 <br>
