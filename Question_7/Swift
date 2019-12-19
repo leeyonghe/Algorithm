@@ -610,6 +610,7 @@ class Chese {
     
 }
 
+
 var array : [String] = []
 array.append("..k.....")
 array.append("ppp.pppp")
