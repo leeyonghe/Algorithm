@@ -1,0 +1,633 @@
+//
+//  main.swift
+//  AAA
+//
+//  Created by lee on 2019/12/18.
+//  Copyright © 2019 lee. All rights reserved.
+//
+
+import Foundation
+
+typealias Position = (x : Int, y : Int)
+
+enum PieceType{
+    case Pawn
+    case Kngith
+    case Bishop
+    case Rook
+    case Quene
+    case King
+    case None
+}
+
+protocol Action {
+    var chese : Chese? { get set }
+    var piecetype : PieceType? { get set }
+    var position : Position? { get set }
+    func Pawn(pos : Position) -> Bool
+    func Kngith(pos : Position) -> Bool
+    func Bishop(pos : Position) -> Bool
+    func Rook(pos : Position) -> Bool
+    func Quene(pos : Position) -> Bool
+    func King(pos : Position) -> Bool
+}
+
+struct MyTeam : Action {
+    var chese : Chese?
+    var piecetype : PieceType?
+    var position : Position?
+    init(position : Position, piecetype : PieceType) {
+        self.position = position
+        self.piecetype = piecetype
+    }
+    func CheckIn(enemy : Enemy) -> Bool{
+        switch piecetype {
+            case .Pawn:
+                return self.Pawn(pos: enemy.position!)
+            case .Kngith:
+                return self.Kngith(pos: enemy.position!)
+            case .Bishop:
+                return self.Bishop(pos: enemy.position!)
+            case .Rook:
+                return self.Rook(pos: enemy.position!)
+            case .Quene:
+                return self.Quene(pos: enemy.position!)
+            case .King:
+                return self.King(pos: enemy.position!)
+            default:
+                return false
+        }
+    }
+    func Pawn(pos : Position) -> Bool{
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Pawn")
+        let pawn_act : [Position] = [(x : self.position!.x-1, y : self.position!.y+1), (x : self.position!.x+1, y : self.position!.y+1)]
+        for xy in pawn_act {
+            if xy.x >= 0 && xy.y >= 0 && xy.x == pos.x && xy.y == pos.y {
+                return true
+            }
+        }
+        return false
+    }
+    func Kngith(pos : Position) -> Bool{
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Kngith")
+        let kngith_act : [Position] = [(x : self.position!.x-1, y : self.position!.y-2), (x : self.position!.x+1, y : self.position!.y-2),
+                                       (x : self.position!.x-2, y : self.position!.y-1), (x : self.position!.x+2, y : self.position!.y-1),
+                                       (x : self.position!.x-2, y : self.position!.y+1), (x : self.position!.x+2, y : self.position!.y+1),
+                                       (x : self.position!.x-1, y : self.position!.y+2), (x : self.position!.x+1, y : self.position!.y+2)]
+        for xy in kngith_act {
+            if xy.x >= 0 && xy.y >= 0 && xy.x == pos.x && xy.y == pos.y {
+                return true
+            }
+        }
+        return false
+    }
+    func Bishop(pos : Position) -> Bool{
+        
+        var x = position!.x
+        var y = position!.y
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Bishop step 0")
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x -= 1
+                y -= 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x -= 1
+                y -= 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Bishop step 1")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x -= 1
+                y += 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x -= 1
+                y += 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Bishop step 2")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x += 1
+                y -= 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x += 1
+                y -= 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Bishop step 3")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x += 1
+                y += 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x += 1
+                y += 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Bishop step 4")
+        
+        return false
+    }
+    func Rook(pos : Position) -> Bool{
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook 0")
+        
+        var x = position!.x
+        var y = position!.y
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook x : \(x)")
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook y : \(y)")
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                y -= 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                y -= 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook 1")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                y += 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                y += 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook 2")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x -= 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x -= 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook 3")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x += 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x += 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        return false
+    }
+    func Quene(pos : Position) -> Bool{
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Quene")
+        if Bishop(pos: pos) {
+            return true
+        }
+        if Rook(pos: pos) {
+            return true
+        }
+        return false
+    }
+    func King(pos : Position) -> Bool{
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> King")
+        let king_act : [Position] = [(x : self.position!.x-1, y : self.position!.y-1), (x : self.position!.x, y : self.position!.y-1),(x : self.position!.x+1, y : self.position!.y-1),
+                                     (x : self.position!.x-1, y : self.position!.y), (x : self.position!.x+1, y : self.position!.y),
+                                     (x : self.position!.x-1, y : self.position!.y+1), (x : self.position!.x, y : self.position!.y+1), (x : self.position!.x+1, y : self.position!.y+1)]
+        for xy in king_act {
+            if xy.x >= 0 && xy.y >= 0 && xy.x == pos.x && xy.y == pos.y {
+                return true
+            }
+        }
+        return false
+    }
+}
+
+struct Enemy : Action{
+    var chese : Chese?
+    var piecetype : PieceType?
+    var position : Position?
+    init(position : Position, piecetype : PieceType) {
+        self.position = position
+        self.piecetype = piecetype
+    }
+    func CheckIn(enemy : MyTeam) -> Bool{
+        switch piecetype {
+            case .Pawn:
+                return self.Pawn(pos: enemy.position!)
+            case .Kngith:
+                return self.Kngith(pos: enemy.position!)
+            case .Bishop:
+                return self.Bishop(pos: enemy.position!)
+            case .Rook:
+                return self.Rook(pos: enemy.position!)
+            case .Quene:
+                return self.Quene(pos: enemy.position!)
+            case .King:
+                return self.King(pos: enemy.position!)
+            default:
+                return false
+        }
+    }
+    func Pawn(pos : Position) -> Bool{
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Pawn")
+        let pawn_act : [Position] = [(x : self.position!.x-1, y : self.position!.y+1), (x : self.position!.x+1, y : self.position!.y+1)]
+        for xy in pawn_act {
+            if xy.x >= 0 && xy.y >= 0 && xy.x == pos.x && xy.y == pos.y {
+                return true
+            }
+        }
+        return false
+    }
+    func Kngith(pos : Position) -> Bool{
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Kngith")
+        let kngith_act : [Position] = [(x : self.position!.x-1, y : self.position!.y-2), (x : self.position!.x+1, y : self.position!.y-2),
+                                       (x : self.position!.x-2, y : self.position!.y-1), (x : self.position!.x+2, y : self.position!.y-1),
+                                       (x : self.position!.x-2, y : self.position!.y+1), (x : self.position!.x+2, y : self.position!.y+1),
+                                       (x : self.position!.x-1, y : self.position!.y+2), (x : self.position!.x+1, y : self.position!.y+2)]
+        for xy in kngith_act {
+            if xy.x >= 0 && xy.y >= 0 && xy.x == pos.x && xy.y == pos.y {
+                return true
+            }
+        }
+        return false
+    }
+    func Bishop(pos : Position) -> Bool{
+        
+        var x = position!.x
+        var y = position!.y
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Bishop step 0")
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x -= 1
+                y -= 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x -= 1
+                y -= 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Bishop step 1")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x -= 1
+                y += 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x -= 1
+                y += 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Bishop step 2")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x += 1
+                y -= 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x += 1
+                y -= 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Bishop step 3")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x += 1
+                y += 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x += 1
+                y += 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Bishop step 4")
+        
+        return false
+    }
+    func Rook(pos : Position) -> Bool{
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook 0")
+        
+        var x = position!.x
+        var y = position!.y
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook x : \(x)")
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook y : \(y)")
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                y -= 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                y -= 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook 1")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                y += 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                y += 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook 2")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x -= 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x -= 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Rook 3")
+        
+        x = position!.x
+        y = position!.y
+        
+        repeat {
+            
+            if chese!.CheseMap[x][y] == "." {
+                x += 1
+                continue
+            }else if (x : x, y : y) as Position == pos {
+                return true
+            }else{
+                x += 1
+            }
+            
+        }while(x >= 0 && x < 8 && y >= 0 && y < 8);
+        
+        return false
+    }
+    func Quene(pos : Position) -> Bool{
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> Quene")
+        if Bishop(pos: pos) {
+            return true
+        }
+        if Rook(pos: pos) {
+            return true
+        }
+        return false
+    }
+    func King(pos : Position) -> Bool{
+        print(">>>>>>>>>>>>>>>>>>>>>>>>>> King")
+        let king_act : [Position] = [(x : self.position!.x-1, y : self.position!.y-1), (x : self.position!.x, y : self.position!.y-1),(x : self.position!.x+1, y : self.position!.y-1),
+                                     (x : self.position!.x-1, y : self.position!.y), (x : self.position!.x+1, y : self.position!.y),
+                                     (x : self.position!.x-1, y : self.position!.y+1), (x : self.position!.x, y : self.position!.y+1), (x : self.position!.x+1, y : self.position!.y+1)]
+        for xy in king_act {
+            if xy.x >= 0 && xy.y >= 0 && xy.x == pos.x && xy.y == pos.y {
+                return true
+            }
+        }
+        return false
+    }
+}
+
+class Chese {
+    
+    var CheseMap : [[String]] = []
+    var enemys : [Enemy] = []
+    var myteams : [MyTeam] = []
+    var array : [String]?
+    
+    init(_ array : [String]) {
+        self.array = array
+        setPosition()
+    }
+    
+    func setPosition(){
+        for (i, s) in self.array!.enumerated() {
+            var array : [String] = []
+             for (j, item) in s.enumerated() {
+                
+                array.append(String(item))
+                
+                if item == "." { continue }
+                
+                let type : PieceType?
+                switch item {
+                    case "p", "P":
+                        type = PieceType.Pawn
+                    case "r", "R":
+                        type = PieceType.Rook
+                    case "b", "B":
+                        type = PieceType.Bishop
+                    case "q", "Q":
+                        type = PieceType.Quene
+                    case "k", "K":
+                        type = PieceType.King
+                    case "n", "N":
+                        type = PieceType.Kngith
+                    default:
+                        type = PieceType.None
+                }
+                
+                if item.uppercased() == String(item) {
+//                    print(">>>>>>>>>>>>>>> enemy")
+                    var obj = Enemy(position: (x : i, y : j), piecetype: type!)
+                    obj.chese = self
+                    enemys.append(obj)
+                }else if item.lowercased() == String(item) {
+//                    print(">>>>>>>>>>>>>>> myteam")
+                    var obj = MyTeam(position: (x : i, y : j), piecetype: type!)
+                    obj.chese = self
+                    myteams.append(obj)
+                }
+                
+            }
+            CheseMap.append(array)
+        }
+        
+//        print(">>>>>>>>>>>>>>> CheseMap : \(CheseMap)")
+        
+    }
+    
+    func Play() {
+        print(">>>>>>>>>>>>>>> Check Start")
+        var myTeamKing : MyTeam? {
+            for myteam in myteams {
+                if myteam.piecetype == PieceType.King {
+                    return myteam
+                }
+            }
+            return nil
+        }
+        if myTeamKing == nil {
+            print(">>>>>>>>>>>>>>> No TeamKing")
+            return
+        }
+        for (index, enemy) in enemys.enumerated() {
+            print(">>>>>>>>>>>>>>> Enemy \(index)")
+            if enemy.CheckIn(enemy: myTeamKing!) {
+                print(">>>>>>>>>>>>>>> Check In")
+                return
+            }
+        }
+        var enemyKing : Enemy? {
+            for enemy in enemys {
+                if enemy.piecetype == PieceType.King {
+                    return enemy
+                }
+            }
+            return nil
+        }
+        if enemyKing == nil {
+            print(">>>>>>>>>>>>>>> No TeamKing")
+            return
+        }
+        for myteam in myteams {
+            if myteam.CheckIn(enemy: enemyKing!) {
+                print(">>>>>>>>>>>>>>> Check In")
+                return
+            }
+        }
+    }
+    
+}
+
+var array : [String] = []
+array.append("..k.....")
+array.append("ppp.pppp")
+array.append("........")
+array.append(".R...B..")
+array.append("........")
+array.append("........")
+array.append("PPPPPPPP")
+array.append("K.......")
+
+//array.append("rnbqkbnr")
+//array.append("pppppppp")
+//array.append("........")
+//array.append("........")
+//array.append("........")
+//array.append("........")
+//array.append("PPPPPPPP")
+//array.append("RNBQKBNR")
+
+var chese = Chese(array)
+chese.Play()

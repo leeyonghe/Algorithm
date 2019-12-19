@@ -202,4 +202,35 @@ JJJJJ
    </tr>      
 </table>
 - 문제 7 <br>
-   * 체크확인 문제 <br>
+   * 체스 체크확인 문제 <br>
+
+
+<table>
+   <tr>
+         <td>
+            입력
+         </td>
+         <td>
+            출력
+         </td>
+   </tr>
+   <tr>
+         <td>
+            <pre>
+..k.....
+ppp.pppp
+........
+.R...B..
+........
+........
+PPPPPPPP
+K.......
+            </pre>
+         </td>
+         <td>
+           <pre>
+Check in
+           </pre>
+         </td>
+   </tr>      
+</table>
