@@ -36,7 +36,7 @@
          </td>
    </tr>      
 </table>
-- 문제 2 [Swift]
+- 문제 2 [Swift] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_2">Go</a>
    <img src="./ScreenShot/swift.png" width="50px">
    * 지뢰찾기 문제 <br>
    * 별표는 지뢰이며, .는 없는 표시다.<br>
@@ -63,7 +63,7 @@
          </td>
    </tr>      
 </table>
-- 문제 3 [Kotlin]
+- 문제 3 [Kotlin] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_3">Go</a>
    <img src="./ScreenShot/kotlin.png" width="50px">
    * 여행경비지출 문제 <br>
    * 어떤 모임에서 여행경비를 지출하는 방법으로 식비, 숙박비, 교통비등... 을 각자 내고 나중에 모든 액수를 동일하게 맞추기 위해 추가된 돈을 1/n로 나누어 주었다. 나누어준 금액을 구하라<br>
@@ -88,7 +88,7 @@
          </td>
    </tr>      
 </table>
-- 문제 4 [Javascript]
+- 문제 4 [Javascript] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_4">Go</a>
    <img src="./ScreenShot/javascript.png" width="50px">
    * LCD 전광판 문제 <br>
    * 숫자를 전광판에 표시한다.<br>
@@ -119,7 +119,7 @@
          </td>
    </tr>      
 </table>
-- 문제 5 [Python]
+- 문제 5 [Python] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_5">Go</a>
    <img src="./ScreenShot/python.png" width="50px">
    * 그래픽 편집기 문제 <br>
    * 입력은 한 줄에 하나씩의 편집기 명령으로 구성된다. 각 명령은 줄 맨 앞에 있는 대문자 한 개로 표현된다.<br>
@@ -161,7 +161,7 @@ JJJJJ
          </td>
    </tr>      
 </table>
-- 문제 6 [Java]
+- 문제 6 [Java] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_6">Go</a>
    <img src="./ScreenShot/java.png" width="50px">
    * 인터프리터 문제 <br>
    * 최초 case별(그룹별)로 몇개를 입력받는지 선택한다.
@@ -201,7 +201,7 @@ JJJJJ
          </td>
    </tr>      
 </table>
-- 문제 7 <br>
+- 문제 7 [Swift] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_7">Go</a>
    <img src="./ScreenShot/swift.png" width="50px">
    * 체스 체크확인 문제 <br>
    * 입력시 체스판 전체의 위치를 넣는다. .는 빈공간이고 나머지는 아래와 같이 약어로 각 체스말을 표시한다. 각 말에 대한 상세한 설명은 제외한다. <br>
@@ -241,6 +241,6 @@ Check in
          </td>
    </tr>      
 </table>
-- 문제 8 <br>
+- 문제 8 [Kotlin] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_8">Go</a>
    <img src="./ScreenShot/kotlin.png" width="50px">
    * 호주식 투표법 문제 <br>
