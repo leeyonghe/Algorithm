@@ -244,3 +244,37 @@ Check in
 - 문제 8 [Kotlin] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_8">Go</a>
    <img src="./ScreenShot/kotlin.png" width="50px">
    * 호주식 투표법 문제 <br>
+   * 투표권자가 모든 후보에 대해 선호도 순으로 순위를 매긴다. 처음에는 1순위로 선택한 것만 집계하며 한 후보가 50% 초과 득표하면 그 후보가 바로 선출된다. 하지만 50% 초가 득표한 후보가 없으면 가장 적은 
+     표를 받은 후보(둘 이상 될 수도 있음)가 우선 탈락한다. 그리고 이렇게 탈락된 후보를 1순위로 찍었던 표만 다시 집계하여 아직 탈락되지 않는 후보들 가운데 가장 높은 선호도를 얻은 후보가 그표를 얻는다.
+     이런 식으로 가장 약한 후보들을 탈락 시키면서 그 다음 순위의 아직 탈락하지 않는 후보에게 표를 주는 과정을 50%가 넘는 표를 얻는 후보가 나오거나 탈락되지 않는 모든 후보가 동률이 될때가지 반복한다.
+<table>
+   <tr>
+         <td>
+            입력
+         </td>
+         <td>
+            출력
+         </td>
+   </tr>
+   <tr>
+         <td>
+            <pre>
+1<br><br>
+3<br>
+Jhon Doe<br>
+Jane Smith<br>
+Sirhan Sirhan<br>
+1 2 3<br>
+2 1 3<br>
+2 3 1<br>
+1 2 3<br>
+3 1 2<br>
+            </pre>
+         </td>
+         <td>
+           <pre>
+Check in
+           </pre>
+         </td>
+   </tr>      
+</table>
