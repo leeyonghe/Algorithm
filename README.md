@@ -13,7 +13,7 @@
    <img src="./ScreenShot/javascript.png" width="150px">
    <img src="./ScreenShot/python.png" width="150px">
 </div>
-- 문제 1 [Java]
+- 문제 1 [Java] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_1">Go</a>
    <img src="./ScreenShot/java.png" width="50px">
    * 3n + 1 문제
    * 두개를 입력받아 두개의 사이값 중 수열을 만들고 그 수열의 사이클중 가장 큰 값을 찾아내는 문제이다.  <br>
