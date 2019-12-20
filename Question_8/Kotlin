@@ -1,0 +1,82 @@
+class Vote {
+	var Level : HashMap<String, Int>?
+	var Name : String?
+	constructor(name : String){
+		this.Level = HashMap<String, Int>()
+		this.Name = name
+	}
+}
+
+class Statistics {
+	var vote : ArrayList<Vote>
+	constructor(){
+		vote = ArrayList<Vote>()
+	}
+	fun AddVote(v : Vote){
+		vote.add(v)
+	}
+	fun Check_Who_Won(){
+		
+	}
+}
+
+fun main(args: Array<String>) {
+	
+	while(true){
+		val sc: Scanner = Scanner(System.`in`)
+		var case_count = sc.nextInt()
+		while(case_count != 0){
+			val line = sc.nextLine() as String
+			println(">>>>>>>>>>>>>>>>>>> line : $line")
+			if (line == "") {
+			}else{
+				continue
+			}	
+			val candidates = sc.nextInt()
+			println(">>>>>>>>>>>>>>>>>>> candidates : $candidates")
+			val group : Array<String?> = arrayOfNulls(candidates)
+			var j = 0
+			do{
+				val candidate = sc.nextLine()
+				if(candidate != ""){
+					println(">>>>>>>>>>>>>>>>>>> candidate : $candidate")
+					group[j++] = candidate
+					if (j == 3) break					
+				}
+			}while (sc.hasNext())
+			println(">>>>>>>>>>>>>>>>>>> group : $group")
+			var result = ArrayList<ArrayList<Int>>()
+			for (i in 0..1000) {
+				val input = sc.nextLine()
+				if(input == ""){
+					break
+				}
+				var obj = ArrayList<Int>()
+				val vote = input.split(" ")
+				println(">>>>>>>>>>>>>>>>>>> vote : $vote")
+				for (k in vote){
+					obj.add(k.toInt())	
+				}
+				result.add(obj)
+			}
+			
+			for ( s in 0..candidates-1 ) {
+				var map = HashMap<String, Int>()
+				for (a in result) {
+					var p = a.get(s)
+					var o = map.get(p.toString())
+					if (o == null){
+						map.put(p.toString(), 1)
+					}else{
+						map.put(p.toString(), o+1)
+					}
+				}
+				println(">>>>>>>>>>>>>>>>>>> map : $map")
+			}
+			
+			case_count -= 1
+		}
+		
+	}
+	
+}
