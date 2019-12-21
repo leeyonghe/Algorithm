@@ -273,7 +273,7 @@ Sirhan Sirhan<br>
          </td>
          <td>
            <pre>
-Check in
+Jhon Doe
            </pre>
          </td>
    </tr>      
