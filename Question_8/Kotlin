@@ -1,9 +1,18 @@
 class Vote {
-	var Level : HashMap<String, Int>?
-	var Name : String?
-	constructor(name : String){
+	var Tag : String
+	var Level : HashMap<String, Int>
+	var Name : String
+	var SuccessFail : Boolean
+	var TotalCount : Int
+	constructor(name : String, tag : String){
 		this.Level = HashMap<String, Int>()
 		this.Name = name
+		this.Tag = tag
+		this.SuccessFail = true
+		this.TotalCount = 0
+	}
+	fun AddLevel(step : String, arg : Int){
+		Level.put(step, arg)
 	}
 }
 
@@ -16,8 +25,47 @@ class Statistics {
 		vote.add(v)
 	}
 	fun Check_Who_Won(){
-		
+		for (i in 1..vote.count()){
+			var max : Int = 0
+			var min : Int = 0 
+			for (v in vote ){
+				if (v.SuccessFail) {
+					val value = v.Level.get(i.toString())!!.toInt()
+					println(">>>>>>>>>>>>>>>>>>>>>>> value : $value")
+					var cutline : Int = Math.round(v.TotalCount.toFloat() / 2.0f)
+					println(">>>>>>>>>>>>>>>>>>>>>>> TotalCount : "+v.TotalCount.toFloat())
+					println(">>>>>>>>>>>>>>>>>>>>>>> cutline : $cutline")
+					if(cutline <= value){
+						print(">>>>>>>>>>>> Finish "+v.Name)
+						return
+					}
+					if (max == 0 && min == 0){
+						max = value
+						min = value
+					}else{
+						if(max > value){
+							min = value
+						}else if(max < value){
+							max = value
+						}else if(min < value){
+							min = value
+						}
+					}
+				}
+			}
+			if (max != 0 && min != 0){
+				println("####################### Max : $max")
+				println("####################### Min : $min")
+				for (v in vote ){
+					val value = v.Level.get(i.toString())!!.toInt()
+					if (value == min){
+						v.SuccessFail = false
+					}
+				}
+			}
+		}
 	}
+
 }
 
 fun main(args: Array<String>) {
@@ -25,7 +73,11 @@ fun main(args: Array<String>) {
 	while(true){
 		val sc: Scanner = Scanner(System.`in`)
 		var case_count = sc.nextInt()
+		var case_array = ArrayList<Statistics>()
 		while(case_count != 0){
+			
+			var statistic = Statistics()
+			
 			val line = sc.nextLine() as String
 			println(">>>>>>>>>>>>>>>>>>> line : $line")
 			if (line == "") {
@@ -35,13 +87,15 @@ fun main(args: Array<String>) {
 			val candidates = sc.nextInt()
 			println(">>>>>>>>>>>>>>>>>>> candidates : $candidates")
 			val group : Array<String?> = arrayOfNulls(candidates)
+			val votes = ArrayList<Vote>()
 			var j = 0
 			do{
 				val candidate = sc.nextLine()
 				if(candidate != ""){
 					println(">>>>>>>>>>>>>>>>>>> candidate : $candidate")
+					votes.add(Vote(candidate, (j+1).toString()))
 					group[j++] = candidate
-					if (j == 3) break					
+					if (j == 3) break
 				}
 			}while (sc.hasNext())
 			println(">>>>>>>>>>>>>>>>>>> group : $group")
@@ -53,11 +107,14 @@ fun main(args: Array<String>) {
 				}
 				var obj = ArrayList<Int>()
 				val vote = input.split(" ")
-				println(">>>>>>>>>>>>>>>>>>> vote : $vote")
 				for (k in vote){
 					obj.add(k.toInt())	
 				}
 				result.add(obj)
+			}
+			
+			for (s in votes){
+				s.TotalCount = result.count()
 			}
 			
 			for ( s in 0..candidates-1 ) {
@@ -71,8 +128,19 @@ fun main(args: Array<String>) {
 						map.put(p.toString(), o+1)
 					}
 				}
-				println(">>>>>>>>>>>>>>>>>>> map : $map")
+				for (m in map.keys) {
+					votes.get(m.toInt()-1).AddLevel((s+1).toString(), map.get(m)!!.toInt())
+				}
+				
 			}
+			
+			for ( s in votes){
+				statistic.AddVote(s)
+			}
+			
+			statistic.Check_Who_Won()
+			
+			case_array.add(statistic)
 			
 			case_count -= 1
 		}
