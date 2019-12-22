@@ -1,0 +1,61 @@
+<html>
+<head>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function(){
+
+        //$(":input[type=text]").val("4 1 4 2 3")
+        //$(":input[type=text]").val("5 1 4 2 -1 6")
+        
+        $(":input[type=button]").click(function(){
+            if (Send($(":input[type=text]").val())) {
+                alert('Not Jolly')
+            }else{
+                alert('Jolly')
+            }
+        })
+        
+        function Send(val){
+            var array = val.split(" ").map(Number)
+            console.log('array length >> '+array.length)
+            var result = Array(array.length-1)
+            var before = null
+            $.each(array, function(index, item){
+                if (before == undefined) {
+                    before = item
+                }else{
+                    var temp = Math.abs(before-item)
+                    result.push(temp)
+                    before = item
+                }
+            })
+            var result = result.reduce(function(a,b){
+                if (a.indexOf(b) < 0) a.push(b);
+                return a;
+            },[]);
+            var result_val = false
+            $.each(result, function(index, item){
+                var inx = $.inArray(item, array)
+                if (inx == -1){
+                    result_val = true
+                }
+            })
+            if (result_val){
+                return true
+            }else{
+                return false
+            }
+        }
+
+    })
+</script>
+</head>
+<body>
+<div>
+<input type="text"> <input type="button" value="전송"></input>
+<div>
+</body>
+</html>
