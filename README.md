@@ -306,3 +306,6 @@ Not Jolly
          </td>
    </tr>      
 </table>
+- 문제 10 [Python] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_10">Go</a>
+   <img src="./ScreenShot/python.png" width="50px">
+   * 포커 패 문제
