@@ -280,8 +280,8 @@ Jhon Doe
 </table>
 - 문제 9 [Javascript] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_09">Go</a>
    <img src="./ScreenShot/javascript.png" width="50px">
-   * 유쾌한 점퍼 문제
-   * n개의 정수(n>0)로 이루어진 수열에 대해 서로 인접해 있는 두수의 차가 1에서 n-1까지의 값을 모두 가지면 그 수열을 유쾌한 점퍼라고 부른다
+   * 유쾌한 점퍼 문제<br>
+   * n개의 정수(n>0)로 이루어진 수열에 대해 서로 인접해 있는 두수의 차가 1에서 n-1까지의 값을 모두 가지면 그 수열을 유쾌한 점퍼라고 부른다<br>
 <table>
    <tr>
          <td>
