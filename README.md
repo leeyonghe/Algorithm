@@ -13,7 +13,7 @@
    <img src="./ScreenShot/javascript.png" width="150px">
    <img src="./ScreenShot/python.png" width="150px">
 </div>
-- 문제 1 [Java] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_1">Go</a>
+- 문제 1 [Java] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_01">Go</a>
    <img src="./ScreenShot/java.png" width="50px">
    * 3n + 1 문제
    * 두개를 입력받아 두개의 사이값 중 수열을 만들고 그 수열의 사이클중 가장 큰 값을 찾아내는 문제이다.  <br>
@@ -36,7 +36,7 @@
          </td>
    </tr>      
 </table>
-- 문제 2 [Swift] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_2">Go</a>
+- 문제 2 [Swift] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_02">Go</a>
    <img src="./ScreenShot/swift.png" width="50px">
    * 지뢰찾기 문제 <br>
    * 별표는 지뢰이며, .는 없는 표시다.<br>
@@ -63,7 +63,7 @@
          </td>
    </tr>      
 </table>
-- 문제 3 [Kotlin] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_3">Go</a>
+- 문제 3 [Kotlin] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_03">Go</a>
    <img src="./ScreenShot/kotlin.png" width="50px">
    * 여행경비지출 문제 <br>
    * 어떤 모임에서 여행경비를 지출하는 방법으로 식비, 숙박비, 교통비등... 을 각자 내고 나중에 모든 액수를 동일하게 맞추기 위해 추가된 돈을 1/n로 나누어 주었다. 나누어준 금액을 구하라<br>
@@ -88,7 +88,7 @@
          </td>
    </tr>      
 </table>
-- 문제 4 [Javascript] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_4">Go</a>
+- 문제 4 [Javascript] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_04">Go</a>
    <img src="./ScreenShot/javascript.png" width="50px">
    * LCD 전광판 문제 <br>
    * 숫자를 전광판에 표시한다.<br>
@@ -119,7 +119,7 @@
          </td>
    </tr>      
 </table>
-- 문제 5 [Python] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_5">Go</a>
+- 문제 5 [Python] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_05">Go</a>
    <img src="./ScreenShot/python.png" width="50px">
    * 그래픽 편집기 문제 <br>
    * 입력은 한 줄에 하나씩의 편집기 명령으로 구성된다. 각 명령은 줄 맨 앞에 있는 대문자 한 개로 표현된다.<br>
@@ -161,7 +161,7 @@ JJJJJ
          </td>
    </tr>      
 </table>
-- 문제 6 [Java] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_6">Go</a>
+- 문제 6 [Java] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_06">Go</a>
    <img src="./ScreenShot/java.png" width="50px">
    * 인터프리터 문제 <br>
    * 최초 case별(그룹별)로 몇개를 입력받는지 선택한다.
@@ -201,7 +201,7 @@ JJJJJ
          </td>
    </tr>      
 </table>
-- 문제 7 [Swift] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_7">Go</a>
+- 문제 7 [Swift] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_07">Go</a>
    <img src="./ScreenShot/swift.png" width="50px">
    * 체스 체크확인 문제 <br>
    * 입력시 체스판 전체의 위치를 넣는다. .는 빈공간이고 나머지는 아래와 같이 약어로 각 체스말을 표시한다. 각 말에 대한 상세한 설명은 제외한다. <br>
@@ -241,7 +241,7 @@ Check in
          </td>
    </tr>      
 </table>
-- 문제 8 [Kotlin] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_8">Go</a>
+- 문제 8 [Kotlin] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_08">Go</a>
    <img src="./ScreenShot/kotlin.png" width="50px">
    * 호주식 투표법 문제 <br>
    * 투표권자가 모든 후보에 대해 선호도 순으로 순위를 매긴다. 처음에는 1순위로 선택한 것만 집계하며 한 후보가 50% 초과 득표하면 그 후보가 바로 선출된다. 하지만 50% 초가 득표한 후보가 없으면 가장 적은 
@@ -278,7 +278,7 @@ Jhon Doe
          </td>
    </tr>      
 </table>
-- 문제 9 [Javascript] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_9">Go</a>
+- 문제 9 [Javascript] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_09">Go</a>
    <img src="./ScreenShot/javascript.png" width="50px">
    * 유쾌한 점퍼 문제
    * n개의 정수(n>0)로 이루어진 수열에 대해 서로 인접해 있는 두수의 차가 1에서 n-1까지의 값을 모두 가지면 그 수열을 유쾌한 점퍼라고 부른다
