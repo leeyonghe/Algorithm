@@ -1,6 +1,8 @@
 import sys
 import enum
 import array
+import re
+# 2H 3D 5S 9C KD 2C 3H 4S 8C AH
 
 class RuleResult(enum.Enum):
     HIGH_CARD = 0
@@ -33,6 +35,53 @@ class Rule :
         for i in range(4, 7) :
             self.enemy.append(i)
         print('serperateMeEnemyCard Done')
+
+    def sortCards(self) :
+        self.cards.sort(reverse=True)
+        alpabet = []
+        for i in self.cards :
+            print('>>>>>>>>>>>> '+i.number)
+            if i.number.isalpha() : 
+                print('>>>>>>>>>>>>>>>  Alpha')
+                alpabet.append(i)
+            else :
+                print('>>>>>>>>>>>>>>>  None Alpha')
+        for i in alpabet :
+            print('>>>>>>>>>>>>>>> Card '+i.number)
+        for i in alpabet :
+            self.cards.remove(i)
+        for i in range(len(alpabet)) :  # A K Q J T
+            for j in range(i+1, len(alpabet)) :
+                left = self.cardConvertInt(alpabet[i].number)
+                right = self.cardConvertInt(alpabet[j].number)
+                print('>>>>>>>>>>>>>>> left '+str(left))
+                print('>>>>>>>>>>>>>>> right '+str(right))
+                if right > left :
+                    temp = alpabet[i]
+                    alpabet[i] = alpabet[j]
+                    alpabet[j] = temp
+        for i in alpabet :
+            print('>>>>>>>>>>>>>>> Card '+i.number)
+        for i in self.cards :
+            alpabet.append(i)
+        self.cards = alpabet
+        for i in self.cards :
+            print('>>>>>>>>>>>> '+i.number)
+
+    def cardConvertInt(self, arg) :
+        if arg == 'A' :
+            return 14
+        elif arg == 'K' :
+            return 13
+        elif arg == 'Q' :
+            return 12
+        elif arg == 'J' :
+            return 11
+        elif arg == 'T' :
+            return 10
+        else :
+            return 0
+
     
     def checkMeEnemyCount(self) :
         if self.me.count == 0 or self.enemy.count == 0 :
@@ -119,13 +168,17 @@ class Rule :
     def getResult(self) :
         print('')
 
-class Card :
+class Card(object) :
     def __init__(self, name) :
-        self.name = name
-        self.number = name[0:1]
-        self.type = name[1:2]
-        print('>>>>>>>>>>>>>>> '+self.number)
-        print('>>>>>>>>>>>>>>> '+self.type)
+        self.name = name        
+        self.number = self.name[0:1]
+        self.type = self.name[1:2]
+        # print('>>>>>>>>>>>>>>> '+self.number)
+        # print('>>>>>>>>>>>>>>> '+self.type)
+    def __eq__(self, other) :
+        return self.number == other.number
+    def __lt__(self, other) :
+            return self.number < other.number
 
 inputArray = []
 while (True) :
@@ -143,6 +196,8 @@ for commands in inputArray :
         rule.addCard(Card(subcommand))
 
 rule.serperateMeEnemyCard()
+
+rule.sortCards()
 
 rule.rule_Check()
 
