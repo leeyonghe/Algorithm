@@ -2,7 +2,9 @@ import sys
 import enum
 import array
 import re
+
 # 2H 3D 5S 9C KD 2C 3H 4S 8C AH
+# 2H 4S 4C 2D 4H 2S 8S AS QS 3C
 
 class RuleResult(enum.Enum):
     HIGH_CARD = 0
@@ -38,33 +40,6 @@ class Rule :
 
     def sortCards(self) :
         self.cards.sort(reverse=True)
-        alpabet = []
-        for i in self.cards :
-            print('>>>>>>>>>>>> '+i.number)
-            if i.number.isalpha() : 
-                print('>>>>>>>>>>>>>>>  Alpha')
-                alpabet.append(i)
-            else :
-                print('>>>>>>>>>>>>>>>  None Alpha')
-        for i in alpabet :
-            print('>>>>>>>>>>>>>>> Card '+i.number)
-        for i in alpabet :
-            self.cards.remove(i)
-        for i in range(len(alpabet)) :  # A K Q J T
-            for j in range(i+1, len(alpabet)) :
-                left = self.cardConvertInt(alpabet[i].number)
-                right = self.cardConvertInt(alpabet[j].number)
-                print('>>>>>>>>>>>>>>> left '+str(left))
-                print('>>>>>>>>>>>>>>> right '+str(right))
-                if right > left :
-                    temp = alpabet[i]
-                    alpabet[i] = alpabet[j]
-                    alpabet[j] = temp
-        for i in alpabet :
-            print('>>>>>>>>>>>>>>> Card '+i.number)
-        for i in self.cards :
-            alpabet.append(i)
-        self.cards = alpabet
         for i in self.cards :
             print('>>>>>>>>>>>> '+i.number)
 
@@ -81,7 +56,6 @@ class Rule :
             return 10
         else :
             return 0
-
     
     def checkMeEnemyCount(self) :
         if self.me.count == 0 or self.enemy.count == 0 :
@@ -178,7 +152,23 @@ class Card(object) :
     def __eq__(self, other) :
         return self.number == other.number
     def __lt__(self, other) :
+        if self.number.isalpha() and other.number.isalpha() : 
+            return self.cardConvertInt(self.number) < self.cardConvertInt(other.number)
+        else : 
             return self.number < other.number
+    def cardConvertInt(self, arg) :
+        if arg == 'A' :
+            return 14
+        elif arg == 'K' :
+            return 13
+        elif arg == 'Q' :
+            return 12
+        elif arg == 'J' :
+            return 11
+        elif arg == 'T' :
+            return 10
+        else :
+            return 0
 
 inputArray = []
 while (True) :
