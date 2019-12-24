@@ -18,31 +18,38 @@ class Rule :
 
     def __init__(self) :
         self.cards = []
+        self.result = RuleResult.NONE
 
     def addCard(self, card) :
         self.cards.append(card)
 
-    def Rule_Check(self) :
+    def serperateMeEnemyCard(self) :
         print('')
 
-    def Rule_High_Card(self) :
+    def rule_Check(self) :
+        print('')
+
+    def rule_High_Card(self) :
         return RuleResult.HIGH_CARD
-    def Rule_One_Pair(self) :
+    def rule_One_Pair(self) :
         return RuleResult.ONE_PAIR
-    def Rule_Two_Pair(self) :
+    def rule_Two_Pair(self) :
         return RuleResult.TWO_PAIR
-    def Rule_Three_Card(self) :
+    def rule_Three_Card(self) :
         return RuleResult.THREE_CARD
-    def Rule_Straight(self) :
+    def rule_Straight(self) :
         return RuleResult.STRAIGHT
-    def Rule_Flush(self) :
+    def rule_Flush(self) :
         return RuleResult.FLUSH
-    def Rule_Full_House(self) :
+    def rule_Full_House(self) :
         return RuleResult.FULL_HOUSE
-    def Rule_FourCard(self) :
+    def rule_FourCard(self) :
         return RuleResult.FOUR_CARD
-    def Rule_Straight_Flush(self) :
+    def rule_Straight_Flush(self) :
         return RuleResult.STRAIGHT_FLUSH
+
+    def getResult(self) :
+        print('')
 
 class Card :
     def __init__(self, name) :
@@ -66,3 +73,9 @@ for commands in inputArray :
     seperatecommand = commands.split(' ')
     for subcommand in seperatecommand :
         rule.addCard(Card(subcommand))
+
+rule.serperateMeEnemyCard()
+
+rule.rule_Check()
+
+rule.getResult()
