@@ -309,3 +309,37 @@ Not Jolly
 - 문제 10 [Python] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_10">Go</a>
    <img src="./ScreenShot/python.png" width="50px">
    * 포커 패 문제
+   * 포커용 카드는 52개의 카드로 이루어져있으며, 각 카드는 클럽, 다이아몬드, 하트, 스페이스(입력 데이터에서는 각각 C,D,H,S로 표기) 중 한 가지 무늬를 가진다. 또한 각 카드는 2에서 10까지 그리고 잭, 퀸, 킹, 또는 에이스(2,3,4,5,6,7,8,9,T,J,Q,K.A로 표기)의 값을 갖는다. 점수를 매길 때 위에 열거한 순서대로 등급이 매겨지며 2가 가장 낮고 에이스가 가장 높다. 무늬는 값에 영향을 끼치지 않는다.
+   * 자세한 룰은 <a href="https://namu.wiki/w/%ED%8F%AC%EC%BB%A4">참조</a>
+   * 총 10개 입력에서 앞에는 5개는 Black Team 뒤에 5개는 White Team으로 한다.
+<table>
+   <tr>
+         <td>
+            입력
+         </td>
+         <td>
+            출력
+         </td>
+   </tr>
+   <tr>
+         <td>
+            <pre>
+2H 3D 5S 9C KD 2C 3H 4S 8C AH<br>
+2H 4S 4C 2D 4H 2S 8S AS QS 3C<br>
+2H 3D 5S 9C KD 2C 3H 4S 8C KH<br>
+2H 3D 5S 9C KD 2D 3H 5C 9S KH<br>
+            </pre>
+         </td>
+         <td>
+           <pre>
+White wins<br>
+Black wins<br>
+Black wins<br>
+Tie
+           </pre>
+         </td>
+   </tr>      
+</table>
+- 문제 11 [Java] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_11">Go</a>
+   <img src="./ScreenShot/java.png" width="50px">
+   * 동맹 휴업 문제
