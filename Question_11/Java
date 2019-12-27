@@ -1,0 +1,78 @@
+public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    System.out.println(">>>>>>>>>>>>>>>>> Start");
+    Scanner sc = new Scanner(System.in); // OR replace System.in with file to read
+    int caseInt = sc.nextInt();
+    System.out.println(">>>>>>>>>>>>>>>>> caseInt : "+caseInt);
+    int daysInt = sc.nextInt();
+    System.out.println(">>>>>>>>>>>>>>>>> daysInt : "+daysInt);
+    int partyInt = sc.nextInt();
+    System.out.println(">>>>>>>>>>>>>>>>> partyInt : "+partyInt);
+    int[] partyGroup = new int[partyInt];
+    
+    int[] daysGroup = new int[daysInt];
+    
+    while(caseInt != 0){
+
+        int p = 0;
+        while(sc.hasNext()) {
+            
+            String arg = sc.nextLine().trim();
+            if (!arg.isEmpty()) {
+                
+                System.out.println(">>>>>>>>>>>>>>>>> arg : "+arg);
+                partyGroup[p++] = Integer.parseInt(arg);
+                
+                if (p == partyInt) {
+                    break;
+                }
+                
+            }else {
+                continue;
+            }
+            
+        }
+        
+        for (int k : partyGroup) {
+            
+            for (int i = k, j = 0; i <= daysInt; i+=k) {
+                j = i%7;
+                System.out.println(">>>>>>>>>>>>>>>>> j : "+j);
+                switch (j) {
+                    case 1:
+                        daysGroup[i-1] = 1;
+                        break;
+                    case 2:
+                        daysGroup[i-1] = 1;
+                        break;
+                    case 3:
+                        daysGroup[i-1] = 1;
+                        break;
+                    case 4:
+                        daysGroup[i-1] = 1;
+                        break;
+                    case 5:
+                        daysGroup[i-1] = 1;
+                        break;
+                    default:
+                        daysGroup[i-1] = 0;
+                        break;
+                }
+            }
+            
+        }
+        
+        int result = 0;
+        
+        for (int k : daysGroup) {
+            System.out.println(">>>>>>>>>>>>>>>>> k : "+k);
+            result += k;
+        }
+        
+        System.out.println("Result : "+result);
+        
+        caseInt--;
+            
+    }
+    
+}
