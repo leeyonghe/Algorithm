@@ -420,9 +420,8 @@ xxxx yyy zzzz www yyyy aaa bbbb ccc dddddd
          </td>
          <td>
            <pre>
-
-dick and jane and puff and spot and yertle 
-***** **** ***** **** ***** **** ***** **** ******* 
+dick and jane and puff and spot and yertle <br>
+***** **** ***** **** ***** **** ***** **** ******* <br>
            </pre>
          </td>
    </tr>      
