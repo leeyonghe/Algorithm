@@ -388,4 +388,42 @@ Tie
 - 문제 12 [Swift] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_12">Go</a>
    <img src="./ScreenShot/swift.png" width="50px">
    * 암호 깨기 문제 <br>
+   * 문제가 나온 글 자체가 난해했다. ㅠㅠ
+   * 문자를 암호화된 문자로 치환하는 로직을 구현하는 것이다.
+   * 최초 사전(여러개의 단어)을 입력 받고 이어서 암호화된 문자열을 입력받는다. 
+   * 암호화된 각 문자열에 있는 단어를 입력받은 사전에 있는 단어로 치환한다.
+   * 출력시 치환된 단어로 표기해주고 사전에 매핑된 단어가 없을경우 *로 표시한다.
+<table>
+   <tr>
+         <td>
+            입력
+         </td>
+         <td>
+            출력
+         </td>
+   </tr>
+   <tr>
+         <td>
+            <pre>
+6<br>
 
+and
+dick
+jane
+puff
+spot
+yertle<br>
+
+hsjd wjd jwjd wjd wpsl wjd nwlw wjd wijdql
+xxxx yyy zzzz www yyyy aaa bbbb ccc dddddd
+</pre>
+         </td>
+         <td>
+           <pre>
+
+dick and jane and puff and spot and yertle 
+***** **** ***** **** ***** **** ***** **** ******* 
+           </pre>
+         </td>
+   </tr>      
+</table>

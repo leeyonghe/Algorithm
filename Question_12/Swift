@@ -1,0 +1,146 @@
+import Foundation
+
+let Tag = ">>>>>>>>>>>>>>"
+
+struct Plain {
+    var Word : String
+    var Length : Int
+}
+
+struct EncryptedWords {
+    var Word : String
+    var Length : Int
+}
+
+class Encrypt {
+    
+    var array : [Plain] = []
+    
+    var words : [[EncryptedWords]] = []
+    
+    var matching : NSMutableDictionary = NSMutableDictionary.init()
+    
+    func Matching() {
+        
+        var tempArray : [Plain] = array
+        
+        for arr in words {
+            
+            for sub_arr in arr {
+                
+                for (i, key) in tempArray.enumerated() {
+                    
+                    guard self.matching.object(forKey: sub_arr.Word as NSString) != nil else {
+                        
+                        if key.Length == sub_arr.Length {
+                            self.matching.setObject(key.Word, forKey: sub_arr.Word as NSString)
+                            tempArray.remove(at: i)
+                            break
+                        }
+                        
+                        continue
+                    }
+                    
+                }
+                
+            }
+            
+        }
+        
+        print("\(Tag) : \(matching)")
+        
+    }
+    
+    func Result(){
+        
+        var result = [String]()
+        
+        for w in words {
+            var temp = ""
+            for sub_w in w {
+                guard let obj = self.matching.object(forKey: sub_w.Word as NSString) else {
+                    for _ in 0...sub_w.Length {
+                        temp.append("*")
+                    }
+                    temp.append(" ")
+                    continue
+                }
+                temp.append("\(obj) ")
+            }
+            result.append(temp)
+        }
+        
+        for s in result {
+            print("\(Tag) : \(s)")
+        }
+        
+    }
+    
+    
+}
+
+var encryptObj = Encrypt()
+
+var readString = readLine()
+
+while readString!.isEmpty {
+    readString = readLine()
+}
+
+var number = Int(readString!)
+
+print("\(Tag) : \(number!)")
+
+while number != 0 {
+    
+    readString = readLine()
+    
+    if !readString!.isEmpty {
+        encryptObj.array.append(Plain(Word: readString!, Length: readString!.count))
+        number! -= 1
+    }
+    
+}
+
+print("\(Tag) : \(encryptObj.array)")
+
+
+
+while let readEncrpty = readLine() {
+    
+    if readEncrpty == "X" {
+        break
+    }else{
+        
+        var temp : [EncryptedWords] = [EncryptedWords]()
+        for p in readEncrpty.split(separator: " ") {
+            temp.append(EncryptedWords(Word: String(p), Length: String(p).count))
+        }
+        
+        encryptObj.words.append(temp)
+        
+        
+    }
+
+}
+
+print("\(Tag) : \(encryptObj.words)")
+
+encryptObj.Matching()
+
+
+
+encryptObj.Result()
+
+
+//6
+//
+//and
+//dick
+//jane
+//puff
+//spot
+//yertle
+//
+//hsjd wjd jwjd wjd wpsl wjd nwlw wjd wijdql
+//xxxx yyy zzzz www yyyy aaa bbbb ccc dddddd
