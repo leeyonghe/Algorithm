@@ -519,3 +519,6 @@ Ace of Spades
          </td>
    </tr>
 </table>
+- 문제 14 [Javascript] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_14">Go</a>
+   <img src="./ScreenShot/javascript.png" width="50px">
+   * 에르되시 수 문제 <br>
