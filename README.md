@@ -429,4 +429,87 @@ dick and jane and puff and spot and yertle <br>
 - 문제 13 [Kotlin] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_13">Go</a>
    <img src="./ScreenShot/kotlin.png" width="50px">
    * 쌓아 올리기 문제 <br>
-   * 
+   * 어떤 도시에는 카지노가 있는데 그중 한 카지노에 있는 딜러가 속임수를 잘써서 이를 감시하기 위해서 딜러가 섞는 모든 카드 순서가 주어지며 사용된 섞는 방법도 제공한다. 이런 정보가 주어졌을때 몇번의 섞기 작업이 진행된후 카드 순서를 에측해야만 한다. 카드 한벌은 52개의 카드로 구성되며 네 개의 무늬마다 13장의 카드가 있다. 그리고 무늬는 Clubs, Diamonds, Hearts, Spades 가운데 하나다. 각 카드는 <값> of <무늬>와 같은 식으로 값과 무늬를 써서 유일하게 식별 할 수 있다. <br>
+   * 입력은 처음 숫자는 케이스(몇번을 수행할건지 숫자를 입력)이고 두번째는 패턴(딜러가 사용하는 섞는 패턴)갯수를 입력받는다.<br>
+   * 패턴 갯수만큼 패턴을 입력한다.<br>
+   * 그리고 적용할 패턴 번호를 입력한다.<br>
+   * 종료 X를 입력한다.<br>
+<table>
+   <tr>
+         <td>
+            입력
+         </td>
+         <td>
+            출력
+         </td>
+   </tr>
+   <tr>
+         <td>
+            <pre>
+1<br>
+2
+2 1 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 52 51
+52 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 1
+1
+2
+X
+</pre>
+         </td>
+         <td>
+           <pre>
+King of Spades
+2 of Clubs
+4 of Clubs
+5 of Clubs
+6 of Clubs
+7 of Clubs
+8 of Clubs
+9 of Clubs
+10 of Clubs
+Jack of Clubs
+Queen of Clubs
+King of Clubs
+Ace of Clubs
+2 of Diamonds
+3 of Diamonds
+4 of Diamonds
+5 of Diamonds
+6 of Diamonds
+7 of Diamonds
+8 of Diamonds
+9 of Diamonds
+10 of Diamonds
+Jack of Diamonds
+Queen of Diamonds
+King of Diamonds
+Ace of Diamonds
+2 of Hearts
+3 of Hearts
+4 of Hearts
+5 of Hearts
+6 of Hearts
+7 of Hearts
+8 of Hearts
+9 of Hearts
+10 of Hearts
+Jack of Hearts
+Queen of Hearts
+King of Hearts
+Ace of Hearts
+2 of Spades
+3 of Spades
+4 of Spades
+5 of Spades
+6 of Spades
+7 of Spades
+8 of Spades
+9 of Spades
+10 of Spades
+Jack of Spades
+Queen of Spades
+Ace of Spades
+3 of Clubs
+           </pre>
+         </td>
+   </tr>      
+</table>

@@ -1,0 +1,240 @@
+// 2 1 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 52 51
+// 52 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 1
+
+val TAG : String = ">>>>>>>>>>>>>>>>"
+
+class Change {
+
+	var before_value : Int
+	var after_value : Int
+	var before : Int
+	var after : Int
+	constructor(before_value : Int, before : Int, after_value : Int, after : Int ){
+		this.before_value = before_value
+		this.after_value = after_value
+		this.before = before
+		this.after = after
+	}
+	
+}
+
+class Pattern {
+	
+	var result : ArrayList<Int> = ArrayList<Int>()
+	
+	var patternArray = ArrayList<ArrayList<Change>>()
+	
+	constructor(){
+		for (i in 1..52) {
+			result.add(i)
+		}
+	}
+	
+	fun CheckPattern( array : Array<Int> ){
+		
+		var temp_pattern = ArrayList<Change>()
+
+		for (i in 0..51) {
+			for (j in 0..51) {
+				if(i != j && array[i] == j+1){
+					
+					var a = i
+					var a_v = result[i]
+					var b = j
+					var b_v = result[j]
+					print("$TAG a => $a : [$a_v]")
+					println(" b => $b : [$b_v]")
+					
+					val count = temp_pattern.count()
+					
+					if (count == 0){
+						temp_pattern.add(Change(a_v, a, b_v, b))
+					}else{
+						
+						var repeat = false
+						for (k in 0..count-1) {
+							val c = temp_pattern.get(k)
+							println("$TAG c => before : "+c.before+" | after : "+c.after)
+							if ((a == c.before && b == c.after) || (a == c.after && b == c.before)) {
+								println(" Got You " )
+								repeat = true
+								break
+							}
+						}
+						if (!repeat) {
+							println("$TAG Added You " )
+							temp_pattern.add(Change(a_v, a, b_v, b))
+						}
+					}
+					
+					break
+				}
+			}
+		}
+		
+		for (j in 0..temp_pattern.count()-1) {
+			var obj = temp_pattern.get(j)
+			println("$TAG Sub Pattern before : "+obj.before)
+			println("$TAG Sub Pattern before_value : "+obj.before_value)
+			println("$TAG Sub Pattern after : "+obj.after)
+			println("$TAG Sub Pattern after_value : "+obj.after_value)
+			result.set(obj.before, obj.after_value)
+			result.set(obj.after, obj.before_value)
+		}
+		
+		patternArray.add(temp_pattern)
+		
+	}
+	
+	fun ExpectedCard(){
+		for (i in 0..51) {
+			var value = result.get(i)
+			println(GenerateName(value))
+		}
+	}
+	
+	fun GenerateName(value : Int) : String{
+		when(value){
+			1  -> return "2 of "+GenerateType(0)
+			2  -> return "3 of "+GenerateType(0)
+			3  -> return "4 of "+GenerateType(0)
+			4  -> return "5 of "+GenerateType(0)
+			5  -> return "6 of "+GenerateType(0)
+			6  -> return "7 of "+GenerateType(0)
+			7  -> return "8 of "+GenerateType(0)
+			8  -> return "9 of "+GenerateType(0)
+			9  -> return "10 of "+GenerateType(0)
+			10 -> return "Jack of "+GenerateType(0)
+			11 -> return "Queen of "+GenerateType(0)
+			12 -> return "King of "+GenerateType(0)
+			13 -> return "Ace of "+GenerateType(0)
+			
+			14  -> return "2 of "+GenerateType(1)
+			15  -> return "3 of "+GenerateType(1)
+			16  -> return "4 of "+GenerateType(1)
+			17  -> return "5 of "+GenerateType(1)
+			18  -> return "6 of "+GenerateType(1)
+			19  -> return "7 of "+GenerateType(1)
+			20  -> return "8 of "+GenerateType(1)
+			21  -> return "9 of "+GenerateType(1)
+			22  -> return "10 of "+GenerateType(1)
+			23 -> return "Jack of "+GenerateType(1)
+			24 -> return "Queen of "+GenerateType(1)
+			25 -> return "King of "+GenerateType(1)
+			26 -> return "Ace of "+GenerateType(1)
+			
+			27  -> return "2 of "+GenerateType(2)
+			28  -> return "3 of "+GenerateType(2)
+			29  -> return "4 of "+GenerateType(2)
+			30  -> return "5 of "+GenerateType(2)
+			31  -> return "6 of "+GenerateType(2)
+			32  -> return "7 of "+GenerateType(2)
+			33  -> return "8 of "+GenerateType(2)
+			34  -> return "9 of "+GenerateType(2)
+			35  -> return "10 of "+GenerateType(2)
+			36 -> return "Jack of "+GenerateType(2)
+			37 -> return "Queen of "+GenerateType(2)
+			38 -> return "King of "+GenerateType(2)
+			39 -> return "Ace of "+GenerateType(2)
+			
+			40  -> return "2 of "+GenerateType(3)
+			41  -> return "3 of "+GenerateType(3)
+			42  -> return "4 of "+GenerateType(3)
+			43  -> return "5 of "+GenerateType(3)
+			44  -> return "6 of "+GenerateType(3)
+			45  -> return "7 of "+GenerateType(3)
+			46  -> return "8 of "+GenerateType(3)
+			47  -> return "9 of "+GenerateType(3)
+			48  -> return "10 of "+GenerateType(3)
+			49 -> return "Jack of "+GenerateType(3)
+			50 -> return "Queen of "+GenerateType(3)
+			51 -> return "King of "+GenerateType(3)
+			52 -> return "Ace of "+GenerateType(3)
+		}
+		return ""
+	}
+	fun GenerateType(value : Int) : String{
+		when(value){
+			0 -> return "Clubs"
+			1 -> return "Diamonds"
+			2 -> return "Hearts"
+			3 -> return "Spades"
+		}
+		return ""
+	}
+	
+}
+
+fun main(args: Array<String>) {
+	
+	while(true){
+		val sc: Scanner = Scanner(System.`in`)
+		
+		var pattern : Pattern = Pattern()
+
+		var case_count = sc.nextInt()
+		
+		println("$TAG : case_count = $case_count")
+		
+		while(case_count != 0){
+			
+			var empty = sc.nextLine() as String
+		
+			while(!empty.isEmpty()){
+				empty = sc.nextLine() as String
+			}
+			
+			var pattern_count = sc.nextInt()
+			
+			println("$TAG : pattern_count = $pattern_count")
+			
+			var pattern_array = ArrayList<Array<Int>>()
+			
+			while(sc.hasNext()){
+				
+				if( pattern_count == 0 ){
+					break
+				}
+				
+				val line = sc.nextLine() as String
+				
+				if (!line.isEmpty()){
+					
+					var array : Array<Int> = Array<Int>(52, { 0 })
+				
+					val sep_line = line.split(" ")
+					
+					println("$TAG : sep_line = $sep_line")
+					
+					sep_line.forEachIndexed{ index, element -> array[index] = element.toInt() }
+					
+					println("$TAG : size = "+array.count());
+					
+					println("$TAG : array = $array")
+					
+					pattern_array.add(array)
+					
+					pattern_count -= 1
+					
+				}
+				
+			}
+			
+			while(sc.hasNext()){
+				val line = sc.nextLine() as String
+				if(line == "X"){
+					break
+				}
+				var selected = line.toInt()
+				pattern.CheckPattern(pattern_array[selected-1])
+			}
+			
+			pattern.ExpectedCard()
+			
+			case_count -= 1
+			
+		}
+		
+	}
+	
+}
