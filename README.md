@@ -439,9 +439,7 @@ dick and jane and puff and spot and yertle <br>
          <td>
             입력
          </td>
-         <td>
-            출력
-         </td>
+         
    </tr>
    <tr>
          <td>
@@ -455,6 +453,14 @@ dick and jane and puff and spot and yertle <br>
 X
 </pre>
          </td>
+         
+   </tr>      
+   <tr>
+         <td>
+            출력
+         </td>
+   </tr>
+   <tr>
          <td>
            <pre>
 King of Spades
@@ -511,5 +517,5 @@ Ace of Spades
 3 of Clubs
            </pre>
          </td>
-   </tr>      
+   </tr>
 </table>
