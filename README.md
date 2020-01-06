@@ -522,3 +522,20 @@ Ace of Spades
 - 문제 14 [Javascript] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_14">Go</a>
    <img src="./ScreenShot/javascript.png" width="50px">
    * 에르되시 수 문제 <br>
+   * 헝가리 출신의 수학자 폴 에르되시는 20세기의 가장 유명한 수학자 가운데 하나로 꼽힌다. 사람들이 그와 논문을 쓸 기회를 얻을수 있는 것은 아니었기 때문에 에르되시와 함께 논문을 썻던 사람과 논문을 같이 쓰는 정도로 만족해야 했다. 이런 이유로 에르되시 수라는 것이 생김<br>
+   * 첫행에는 시나리오 갯수를 선택하고 논문 수와 사람수를 지정한다음 submit을 누르면 Erdos라는 사람과 같이 논문을 써본사람은 1이고 1을 받은 사람과 같이 논문을 쓴 사람을 2를 부여한다. 그리고 아무것도 연관성이 없으면 infinity로 표시한다.<br>
+<table>
+   <tr>
+         <td>
+            입력
+         </td>
+         <td>
+            출력
+         </td>
+   </tr>
+   <tr>
+         <td>
+         <img src="./answer14.png" width="100%" colspan="2">
+         </td>
+   </tr>      
+</table>
