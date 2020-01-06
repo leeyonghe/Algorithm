@@ -534,7 +534,7 @@ Ace of Spades
          </td>
    </tr>
    <tr>
-         <td colspan="2">
+         <td rowspan="2">
          <img src="./answer14.png" width="100%">
          </td>
    </tr>      
