@@ -539,3 +539,6 @@ Ace of Spades
          </td>
    </tr>      
 </table>
+- 문제 15 [Python] <a href="https://github.com/leeyonghe/Algorithm/tree/master/Question_15">Go</a>
+   <img src="./ScreenShot/python.png" width="50px">
+   * 경시 대회 점수판 문제 <br>
